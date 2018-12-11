@@ -63,9 +63,15 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Parede"))
+        {
+            Destroy(gameObject);
+        }
+
+
+         if(other.gameObject.CompareTag("Espinhos")|| other.gameObject.CompareTag("Estalac")||other.gameObject.CompareTag("Lava"))
         {
             Destroy(gameObject);
         }
