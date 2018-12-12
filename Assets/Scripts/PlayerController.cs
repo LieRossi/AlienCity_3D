@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour {
 
     public int valPedraAzul = 0;
     public int valPedraVerde = 0;
-    private bool aberto = false;
+    private bool Aberto ;
+    private bool porta ;
 
 
 
@@ -72,20 +73,26 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag("pedraAzul")){ 
         
             valPedraAzul++;
+            AbrePorta.ScoreA++;
+            Debug.Log(valPedraAzul);
+
         }
 
-        
+
         if (other.gameObject.CompareTag("pedraVerde")){ 
         
             valPedraVerde++;
+            AbrePorta.ScoreV++;
+            Debug.Log(valPedraVerde);
         }
 
-    
-        if (valPedraAzul >=1 && valPedraVerde >=1)
-        {
-            anim.SetTrigger("Aberto");
-            aberto = true; ;
-        }
+        //if (valPedraAzul >= 1 && valPedraVerde >= 1)
+       // {
+           // porta = true;
+            //other.GetComponent<AbrePorta>().Abrindo();
+            //anim.SetTrigger("Aberto");
+           // Aberto = true; 
+       // }
 
 
 
