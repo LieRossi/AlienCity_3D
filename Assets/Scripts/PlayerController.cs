@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour {
 	protected Vector3 move = Vector3.zero;
 	private bool jump = false;
 
+    public int valPedraAzul = 0;
+    public int valPedraVerde = 0;
+    private bool aberto = false;
 
-	
-	void Start()
+
+
+    void Start()
 	{
 		cc = GetComponent<CharacterController> ();
 		anim = GetComponent<Animator>();
@@ -65,17 +69,38 @@ public class PlayerController : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Parede"))
+        if (other.gameObject.CompareTag("pedraAzul")){ 
+        
+            valPedraAzul++;
+        }
+
+        
+        if (other.gameObject.CompareTag("pedraVerde")){ 
+        
+            valPedraVerde++;
+        }
+
+    
+        if (valPedraAzul >=1 && valPedraVerde >=1)
         {
-            Destroy(gameObject);
+            anim.SetTrigger("Aberto");
+            aberto = true; ;
         }
 
 
-         if(other.gameObject.CompareTag("Espinhos")|| other.gameObject.CompareTag("Estalac")||other.gameObject.CompareTag("Lava"))
-        {
-            Destroy(gameObject);
+
+
+            /* if (other.gameObject.CompareTag("Parede"))
+             {
+                 Destroy(gameObject);
+             }
+
+
+              if(other.gameObject.CompareTag("Espinhos")|| other.gameObject.CompareTag("Estalac")||other.gameObject.CompareTag("Lava"))
+             {
+                 Destroy(gameObject);
+             }*/
         }
-    }
 
 
 }
