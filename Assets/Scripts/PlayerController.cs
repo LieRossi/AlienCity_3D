@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour {
         {
             valPedraAzul++;
             AbrePorta.ScoreA++;
+            //ScoreScript.ScoreA++;
             //Debug.Log(valPedraAzul);
         }
 
@@ -82,12 +83,10 @@ public class PlayerController : MonoBehaviour {
         {
             valPedraVerde++;
             AbrePorta.ScoreV++;
+            //ScoreScript.ScoreV++;
             //Debug.Log(valPedraVerde);
         }
-         if (other.gameObject.CompareTag("Bomb"))
-        {
-            Destroy(gameObject);
-        }
+         
 
         /* if (other.gameObject.CompareTag("Boxparede"))
          {
