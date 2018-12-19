@@ -6,8 +6,7 @@ public class AbrePorta : MonoBehaviour {
 
     public  int ValPedraAzul = 0;
     public  int ValPedraVerde = 0;
-   //private PlayerController ValPedraAzul;
-   //private PlayerController ValPedraVerde;
+   
     private bool Porta = false;
     private  bool Aberto;
     public  static int ScoreA;
@@ -21,9 +20,7 @@ public class AbrePorta : MonoBehaviour {
    void Start() {
        anim = GetComponent<Animator>();
        anim.SetTrigger("Fechado");
-        //ValPedraAzul  = GameObject.Find("valPedraAzul").GetComponent<PlayerController>();
-        //ValPedraVerde = GameObject.Find("valPedraVerde").GetComponent<PlayerController>();
-        //Porta = GameObject.Find("porta").GetComponent<PlayerController>();
+        
         ScoreA = ValPedraAzul;
         ScoreV = ValPedraAzul;
    }
@@ -37,12 +34,7 @@ public class AbrePorta : MonoBehaviour {
         }
     }
 
-   /* public void Abrindo() {
-        if (Porta =true)
-        {
-        anim.SetTrigger("Aberto");
-        Aberto = true;
-       }*/
+  
     }
 
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour {
@@ -17,6 +18,9 @@ public class PlayerController : MonoBehaviour {
     private bool Aberto;
     private bool porta;
 
+   
+    private int pontos;
+    public Text TextoPontos;
 
 
     void Start()
@@ -24,6 +28,9 @@ public class PlayerController : MonoBehaviour {
         cc = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         anim.SetTrigger("Parado");
+
+
+     
     }
 
     void Update()
@@ -46,6 +53,10 @@ public class PlayerController : MonoBehaviour {
         move += gravidade;
         cc.Move(move * Time.deltaTime);
         Anima();
+
+       
+
+
     }
 
     void Anima()
@@ -74,8 +85,10 @@ public class PlayerController : MonoBehaviour {
         {
             valPedraAzul++;
             AbrePorta.ScoreA++;
-            //ScoreScript.ScoreA++;
-            //Debug.Log(valPedraAzul);
+            ScoreScript.pontos++;
+
+            
+            //Debug.Log(ScoreScript.pontos);
         }
 
 
@@ -83,31 +96,35 @@ public class PlayerController : MonoBehaviour {
         {
             valPedraVerde++;
             AbrePorta.ScoreV++;
-            //ScoreScript.ScoreV++;
-            //Debug.Log(valPedraVerde);
-        }
-         
+            ScoreScript.pontos++;
 
-        /* if (other.gameObject.CompareTag("Boxparede"))
-         {
-             Destroy(gameObject);
-         }*/
+            
+            //Debug.Log(ScoreScript.pontos);
+        }
     }
 
-   /* private void OnControllerColliderHit(ControllerColliderHit other)
+    
+
+
+    /* if (other.gameObject.CompareTag("Boxparede"))
+     {
+         Destroy(gameObject);
+     }*/
+
+    /* private void OnControllerColliderHit(ControllerColliderHit other)
+     {
+             if (other.gameObject.CompareTag("Bomb"))
+             {
+                 Destroy(gameObject);
+             }*/
+
+
+    /*if(other.gameObject.CompareTag("Espinhos"))//|| other.gameObject.CompareTag("Estalac")||other.gameObject.CompareTag("Lava"))
     {
-            if (other.gameObject.CompareTag("Bomb"))
-            {
-                Destroy(gameObject);
-            }*/
+            Destroy(gameObject);
+    }
 
-
-            /*if(other.gameObject.CompareTag("Espinhos"))//|| other.gameObject.CompareTag("Estalac")||other.gameObject.CompareTag("Lava"))
-            {
-                    Destroy(gameObject);
-            }
-
-    */
+*/
 
 
 }
