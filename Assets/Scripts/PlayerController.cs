@@ -101,30 +101,33 @@ public class PlayerController : MonoBehaviour {
             
             //Debug.Log(ScoreScript.pontos);
         }
+
+
+        if (other.gameObject.CompareTag("Boxparede"))
+        {
+            EnergiaScript.VidaCheia--;
+            //Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Espinhos"))
+        {
+            EnergiaScript.VidaCheia--;
+            //Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Lava"))
+        {
+            EnergiaScript.VidaCheia--;
+            //Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Estalac"))
+        {
+            EnergiaScript.VidaCheia--;
+            //Destroy(gameObject);
+        }
+
     }
 
-    
-
-
-    /* if (other.gameObject.CompareTag("Boxparede"))
-     {
-         Destroy(gameObject);
-     }*/
-
-    /* private void OnControllerColliderHit(ControllerColliderHit other)
-     {
-             if (other.gameObject.CompareTag("Bomb"))
-             {
-                 Destroy(gameObject);
-             }*/
-
-
-    /*if(other.gameObject.CompareTag("Espinhos"))//|| other.gameObject.CompareTag("Estalac")||other.gameObject.CompareTag("Lava"))
-    {
-            Destroy(gameObject);
-    }
-
-*/
-
-
+ 
 }
