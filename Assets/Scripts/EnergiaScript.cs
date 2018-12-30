@@ -41,13 +41,13 @@ public class EnergiaScript : MonoBehaviour {
             EnergiaAtual = 0;
         }
 
-    
-    //Debug.Log(EnergiaScript.EnergiaAtual);
+        Debug.Log(EnergiaScript.EnergiaAtual);
     }
 
     void SistemaBarras()
     {
-        BarraEnergia.fillAmount -= Time.deltaTime/100;
+        //BarraEnergia.fillAmount -= Time.deltaTime/100;
+        BarraEnergia.fillAmount = EnergiaScript.EnergiaAtual/100 ;
     }
 
     
