@@ -5,32 +5,50 @@ using UnityEngine.UI;
 
 
 public class EnergiaScript : MonoBehaviour {
-    public Texture BarraEnergia;
-    public static int VidaCheia = 100;
-    public static int EnergiaPlayer;
+    public  Image BarraEnergia;
+    private float fillAmount;
+    public static float EnergiaCheia = 100;
+    public static float EnergiaAtual;
 
-	// Use this for initialization
-	void Start () {
-        EnergiaPlayer = VidaCheia;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(EnergiaPlayer >= VidaCheia)
-        {
-            EnergiaPlayer = VidaCheia;
-        }
-        else if (EnergiaPlayer <=0)
-        {
-            EnergiaPlayer = 0;
-        }
 
-            //VidaCheia *Time.deltaTime;
-            Debug.Log(EnergiaPlayer);
-        
+
+
+    // Use this for initialization
+    void Start() {
+        EnergiaAtual = EnergiaCheia;
+
 
     }
 
-   
+    // Update is called once per frame
+    void Update()
+    {
+        SistemaVida();
+        SistemaBarras();
+
+    }
+
+    void SistemaVida()
+    {
+
+        if (EnergiaAtual >= EnergiaCheia)
+        {
+            EnergiaAtual = EnergiaCheia;
+
+        }
+        else if (EnergiaAtual <= 0)
+        {
+            EnergiaAtual = 0;
+        }
+
+    
+    //Debug.Log(EnergiaScript.EnergiaAtual);
+    }
+
+    void SistemaBarras()
+    {
+        BarraEnergia.fillAmount -= Time.deltaTime/100;
+    }
+
+    
 }

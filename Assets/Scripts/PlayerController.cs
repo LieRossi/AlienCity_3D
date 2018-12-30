@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour {
     private int pontos;
     public Text TextoPontos;
 
+    public Image BarraEnergia;
+
 
     void Start()
     {
@@ -87,7 +89,7 @@ public class PlayerController : MonoBehaviour {
             AbrePorta.ScoreA++;
             ScoreScript.pontos++;
 
-            
+
             //Debug.Log(ScoreScript.pontos);
         }
 
@@ -98,36 +100,41 @@ public class PlayerController : MonoBehaviour {
             AbrePorta.ScoreV++;
             ScoreScript.pontos++;
 
-            
+
             //Debug.Log(ScoreScript.pontos);
         }
 
-
+        
         if (other.gameObject.CompareTag("Boxparede"))
         {
-            EnergiaScript.VidaCheia--;
+            EnergiaScript.EnergiaCheia--;
             //Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Espinhos"))
         {
-            EnergiaScript.VidaCheia--;
+            EnergiaScript.EnergiaCheia--;
             //Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Lava"))
         {
-            EnergiaScript.VidaCheia--;
+            EnergiaScript.EnergiaCheia--;
             //Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Estalac"))
         {
-            EnergiaScript.VidaCheia--;
+            EnergiaScript.EnergiaCheia--;
             //Destroy(gameObject);
+        }
+
+        if (EnergiaScript.EnergiaCheia == 0)
+        {
+            //Destroy(this.gameObject);
         }
 
     }
 
- 
+    
 }
