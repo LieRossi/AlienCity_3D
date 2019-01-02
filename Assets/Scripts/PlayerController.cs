@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour {
 
         if (EnergiaScript.EnergiaCheia == 0)
         {
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
 
     }
