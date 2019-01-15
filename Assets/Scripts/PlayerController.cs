@@ -107,25 +107,25 @@ public class PlayerController : MonoBehaviour {
         
         if (other.gameObject.CompareTag("Boxparede"))
         {
-            EnergiaScript.EnergiaCheia--;
+            EnergiaScript.EnergiaCheia-=5;
             //Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Espinhos"))
         {
-            EnergiaScript.EnergiaCheia--;
+            EnergiaScript.EnergiaCheia-=5;
             //Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Lava"))
         {
-            EnergiaScript.EnergiaCheia--;
-            //Destroy(gameObject);
+            EnergiaScript.EnergiaCheia-=20;
+            Destroy(this.gameObject);
         }
 
         if (other.gameObject.CompareTag("Estalac"))
         {
-            EnergiaScript.EnergiaCheia--;
+            EnergiaScript.EnergiaCheia-=5;
             //Destroy(gameObject);
         }
 

@@ -19,9 +19,6 @@ public class ScoreScript : MonoBehaviour {
 	 void Update () {
         
         TextoPontos.text =  pontos.ToString();
-    }
-
-
-   
+    } 
 
 }

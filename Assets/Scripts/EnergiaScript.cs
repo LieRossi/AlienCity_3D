@@ -47,7 +47,7 @@ public class EnergiaScript : MonoBehaviour {
     void SistemaBarras()
     {
         //BarraEnergia.fillAmount -= Time.deltaTime/100;
-        BarraEnergia.fillAmount = EnergiaScript.EnergiaAtual/100 ;
+        BarraEnergia.fillAmount = EnergiaScript.EnergiaCheia/100 ;
     }
 
     
